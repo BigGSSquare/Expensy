@@ -99,6 +99,5 @@ This project is licensed under the **MIT License**.
 
 For queries or suggestions, reach out to **[BigGSSquare](https://github.com/BigGSSquare)**.
 
-📧 **Email:** gchivuku@gitam.in  
-🌐 **Website:** [www.expensyapp.com](https://www.expensyapp.com)
+📧 **Email:** gchivuku@gitam.in 
 
