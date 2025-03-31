@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase API Key Test</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .result {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .log {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: monospace;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Firebase API Key Test</h1>
+    <p>This page tests if your Firebase API key and configuration are working correctly.</p>
+    
+    <h2>Your Firebase Configuration</h2>
+    <div class="log" id="config-display">Loading configuration...</div>
+    
+    <h2>Test Firebase Initialization</h2>
+    <button onclick="testInitialization()">Test Initialization</button>
+    <div id="init-result"></div>
+    
+    <h2>Test API Key for Authentication</h2>
+    <button onclick="testApiKey()">Test API Key</button>
+    <div id="apikey-result"></div>
+    
+    <h2>Log</h2>
+    <div class="log" id="log"></div>
+    
+    <script>
+        // Log function
+        function logMessage(message) {
+            const logElement = document.getElementById('log');
+            const logEntry = document.createElement('div');
+            logEntry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logElement.appendChild(logEntry);
+            console.log(message);
+        }
+        
+        // Show result function
+        function showResult(elementId, success, message) {
+            const element = document.getElementById(elementId);
+            element.className = success ? 'result success' : 'result error';
+            element.textContent = message;
+        }
+        
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBTbRyIaR31-bqM70pvy86gkpS8kWF0FX8",
+            authDomain: "expensy-forge.firebaseapp.com",
+            projectId: "expensy-forge",
+            storageBucket: "expensy-forge.firebasestorage.app",
+            messagingSenderId: "763967536539",
+            appId: "1:763967536539:web:c6bc521009d03040a5b53e",
+            measurementId: "G-W6V3XMPN1J"
+        };
+        
+        // Display configuration
+        document.getElementById('config-display').textContent = JSON.stringify(firebaseConfig, null, 2);
+        
+        // Test Firebase initialization
+        function testInitialization() {
+            try {
+                logMessage('Testing Firebase initialization...');
+                firebase.initializeApp(firebaseConfig);
+                logMessage('Firebase initialized successfully!');
+                showResult('init-result', true, 'Firebase initialized successfully!');
+            } catch (error) {
+                logMessage(`Firebase initialization failed: ${error.message}`);
+                showResult('init-result', false, `Error: ${error.message}`);
+            }
+        }
+        
+        // Test API key with a simple authentication operation
+        function testApiKey() {
+            try {
+                logMessage('Testing API key with a sign-in operation...');
+                
+                // Try a sign-in operation that will fail but test API key
+                firebase.auth().signInWithEmailAndPassword('test@example.com', 'password123')
+                    .then(() => {
+                        // This shouldn't happen unless you have this test account
+                        logMessage('Sign-in succeeded!');
+                        showResult('apikey-result', true, 'API key is working correctly!');
+                    })
+                    .catch((error) => {
+                        if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password' || 
+                            error.code === 'auth/invalid-credential' || error.code === 'auth/invalid-email') {
+                            // These errors are expected and mean the API key is working
+                            logMessage(`Expected auth error: ${error.code}. This is normal and means your API key is working.`);
+                            showResult('apikey-result', true, 'API key is working correctly!');
+                        } else {
+                            // Other errors might indicate API key issues
+                            logMessage(`Auth error: ${error.code} - ${error.message}`);
+                            showResult('apikey-result', false, `Error: ${error.message}`);
+                        }
+                    });
+            } catch (error) {
+                logMessage(`Test failed: ${error.message}`);
+                showResult('apikey-result', false, `Error: ${error.message}`);
+            }
+        }
+    </script>
+</body>
+</html>

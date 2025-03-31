@@ -1,0 +1,150 @@
+.budget-settings {
+  padding: 20px;
+}
+
+.budget-settings h1 {
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.notification-settings, .current-budgets, .add-budget {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notification-settings h2, .current-budgets h2, .add-budget h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: #555;
+}
+
+.alert-options {
+  margin-top: 20px;
+}
+
+.email-alert-option {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.email-alert-option:hover {
+  background-color: #fafafa;
+}
+
+.email-alert-option input[type="checkbox"] {
+  margin-right: 16px;
+  transform: scale(1.2);
+}
+
+.alert-option-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.alert-option-title {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.alert-option-desc {
+  font-size: 14px;
+  color: #666;
+}
+
+.budgets-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.budgets-table th, .budgets-table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.budgets-table th {
+  font-weight: 600;
+  color: #666;
+}
+
+.progress-container {
+  width: 100%;
+  height: 12px;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.negative-balance {
+  color: #ff4d4f;
+  font-weight: 500;
+}
+
+.edit-btn {
+  background-color: #f0f0f0;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.edit-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.form-row .form-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.add-btn {
+  background-color: #3f51b5;
+  color: white;
+  height: 42px;
+}
+
+.add-btn:hover {
+  background-color: #303f9f;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .add-btn {
+    width: 100%;
+  }
+}

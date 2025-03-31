@@ -1,0 +1,867 @@
+/* src/components/split/SplitExpense.css */
+
+/* Common styles for split expense components */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+  }
+  
+  .error-message {
+    background-color: #fff2f0;
+    border: 1px solid #ffccc7;
+    color: #ff4d4f;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .success-message {
+    background-color: #f6ffed;
+    border: 1px solid #b7eb8f;
+    color: #52c41a;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  /* Split Expense Form Styles */
+  .split-expense-form-container,
+  .split-expense-details-container,
+  .split-expense-list-container,
+  .split-contacts-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .split-expense-form-container h1,
+  .split-expense-details-container h1,
+  .split-expense-list-container h1,
+  .split-contacts-container h1 {
+    margin-bottom: 24px;
+    color: #333;
+  }
+  
+  .split-expense-form {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-section {
+    margin-bottom: 30px;
+  }
+  
+  .form-section h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+  
+  .split-method-selector {
+    margin-bottom: 20px;
+  }
+  
+  .split-method-selector label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .split-method-options {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .split-method-options button {
+    padding: 10px 16px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    flex: 1;
+    transition: all 0.2s;
+  }
+  
+  .split-method-options button.active {
+    background-color: #3f51b5;
+    color: white;
+    border-color: #3f51b5;
+  }
+  
+  .participants-list {
+    margin-bottom: 20px;
+  }
+  
+  .participants-list h3 {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 12px;
+  }
+  
+  .no-participants {
+    color: #999;
+    font-style: italic;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+  }
+  
+  .participants-table {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .participants-header {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+    background-color: #f5f5f5;
+    padding: 10px 12px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .participant-row {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+    padding: 12px;
+    border-top: 1px solid #eee;
+    align-items: center;
+  }
+  
+  .participant-row input {
+    width: 70px;
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .remove-participant-btn {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .add-participant-form {
+    background-color: #f9f9f9;
+    padding: 16px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .add-participant-form h3 {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 12px;
+  }
+  
+  .participant-form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    align-items: flex-end;
+  }
+  
+  .add-participant-btn {
+    background-color: #52c41a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 24px;
+  }
+  
+  .contacts-section {
+    background-color: #f9f9f9;
+    padding: 16px;
+    border-radius: 4px;
+  }
+  
+  .contacts-section h3 {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 12px;
+  }
+  
+  .contacts-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  
+  .contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+  }
+  
+  .contact-info {
+    flex: 1;
+  }
+  
+  .contact-name {
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .contact-email {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .add-contact-btn {
+    background-color: #1890ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  
+  .cancel-btn {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  .submit-btn {
+    background-color: #3f51b5;
+    color: white;
+  }
+  
+  /* Split Expense List Styles */
+  .split-expense-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .create-split-btn {
+    background-color: #3f51b5;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+  }
+  
+  .split-expense-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .filter-buttons button {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .filter-buttons button.active {
+    background-color: #3f51b5;
+    color: white;
+    border-color: #3f51b5;
+  }
+  
+  .search-box input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 240px;
+    font-size: 14px;
+  }
+  
+  .no-splits-message {
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .no-splits-message p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .split-expenses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .split-expense-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .split-expense-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .split-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+  
+  .split-title {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+    flex: 1;
+  }
+  
+  .split-status {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+  }
+  
+  .status-pending {
+    background-color: #fffbe6;
+    color: #faad14;
+  }
+  
+  .status-partial {
+    background-color: #e6f7ff;
+    color: #1890ff;
+  }
+  
+  .status-settled {
+    background-color: #f6ffed;
+    color: #52c41a;
+  }
+  
+  .split-card-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .split-card-amount {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .total-amount {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .participants-count {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  
+  .payment-progress {
+    margin-bottom: 12px;
+  }
+  
+  .progress-bar {
+    height: 8px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 4px;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background-color: #52c41a;
+    border-radius: 4px;
+  }
+  
+  .progress-text {
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+  }
+  
+  .participant-avatars {
+    display: flex;
+  }
+  
+  .participant-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #1890ff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: -10px;
+    border: 2px solid white;
+  }
+  
+  .participant-avatar.paid {
+    background-color: #52c41a;
+  }
+  
+  .participant-avatar.more {
+    background-color: #f5f5f5;
+    color: #666;
+  }
+  
+  /* Split Expense Details Styles */
+  .split-details-header {
+    margin-bottom: 24px;
+  }
+  
+  .split-details-header h1 {
+    margin-bottom: 8px;
+  }
+  
+  .expense-meta {
+    display: flex;
+    gap: 16px;
+    color: #666;
+  }
+  
+  .expense-category {
+    background-color: #f5f5f5;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .split-expense-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .split-expense-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .summary-item {
+    text-align: center;
+  }
+  
+  .summary-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 4px;
+  }
+  
+  .summary-value {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .split-expense-notes {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 16px;
+  }
+  
+  .split-expense-notes h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .split-participants-section {
+    margin-bottom: 24px;
+  }
+  
+  .split-participants-section h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 16px;
+  }
+  
+  .participant-name, .participant-email, .participant-share, .participant-status, .participant-actions {
+    padding: 0 8px;
+  }
+  
+  .participant-status {
+    display: flex;
+    align-items: center;
+  }
+  
+  .status-paid {
+    color: #52c41a;
+  }
+  
+  .status-unpaid {
+    color: #faad14;
+  }
+  
+  .payment-method {
+    font-size: 12px;
+    color: #666;
+    margin-left: 4px;
+  }
+  
+  .mark-paid-btn, .send-reminder-btn {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 6px 10px;
+    margin-right: 8px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .mark-paid-btn:hover {
+    background-color: #52c41a;
+    color: white;
+    border-color: #52c41a;
+  }
+  
+  .send-reminder-btn:hover {
+    background-color: #1890ff;
+    color: white;
+    border-color: #1890ff;
+  }
+  
+  .split-expense-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  .back-button, .delete-button {
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .back-button {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  .delete-button {
+    background-color: #ff4d4f;
+    color: white;
+  }
+  
+  /* Split Contacts Styles */
+  .split-contacts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .back-to-splits-btn {
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 10px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .add-contact-section {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-contact-section h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 16px;
+  }
+  
+  .add-contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 16px;
+    align-items: flex-end;
+  }
+  
+  .contacts-list-section {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contacts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .contacts-header h2 {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .no-contacts-message {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+  }
+  
+  .contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+  }
+  
+  .contact-card {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 16px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+  
+  .contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #1890ff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 12px;
+  }
+  
+  .contact-info {
+    flex: 1;
+  }
+  
+  .contact-name {
+    font-size: 16px;
+    color: #333;
+    margin: 0 0 4px 0;
+  }
+  
+  .contact-email {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .delete-contact-btn {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  .contact-card:hover .delete-contact-btn {
+    opacity: 1;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .split-expense-form-container,
+    .split-expense-details-container,
+    .split-expense-list-container,
+    .split-contacts-container {
+      padding: 10px;
+    }
+    
+    .participants-header,
+    .participant-row {
+      grid-template-columns: 2fr 2fr 1fr;
+    }
+    
+    .participant-form-row {
+      grid-template-columns: 1fr;
+    }
+    
+    .add-contact-form {
+      grid-template-columns: 1fr;
+    }
+    
+    .split-expense-summary {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .split-expense-filters {
+      flex-direction: column;
+      gap: 12px;
+      align-items: stretch;
+    }
+    
+    .search-box input {
+      width: 100%;
+    }
+  }
+
+  .email-status {
+    margin-left: 10px;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    animation: fadeIn 0.3s ease-in;
+  }
+  
+  .email-status.success {
+    background-color: #f6ffed;
+    color: #52c41a;
+    border: 1px solid #b7eb8f;
+  }
+  
+  .email-status.error {
+    background-color: #fff2f0;
+    color: #ff4d4f;
+    border: 1px solid #ffccc7;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Update the participant-actions to handle the additional email status */
+  .participant-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .send-reminder-btn:disabled {
+    background-color: #f5f5f5;
+    color: #aaa;
+    cursor: not-allowed;
+  }
+  
+  /* Add tooltip for email status on mobile */
+  @media (max-width: 768px) {
+    .email-status {
+      position: relative;
+    }
+    
+    .email-status.error::before {
+      content: attr(title);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      white-space: nowrap;
+      font-size: 12px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+    
+    .email-status.error:hover::before {
+      opacity: 1;
+      visibility: visible;
+    }
+  }

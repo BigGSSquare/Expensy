@@ -1,0 +1,152 @@
+.transaction-history {
+  padding: 20px;
+}
+
+.transaction-history h1 {
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.add-btn {
+  padding: 10px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.expense-btn {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.expense-btn:hover {
+  background-color: #ff7875;
+}
+
+.income-btn {
+  background-color: #52c41a;
+  color: white;
+}
+
+.income-btn:hover {
+  background-color: #389e0d;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+}
+
+.tab.active {
+  color: #1890ff;
+  border-bottom-color: #1890ff;
+}
+
+.filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.search-bar {
+  flex: 2;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.category-filter {
+  flex: 1;
+}
+
+.category-filter select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.transactions-table th, .transactions-table td {
+  text-align: left;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.transactions-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #666;
+}
+
+.amount {
+  font-weight: 500;
+  text-align: right;
+}
+
+.income-amount {
+  color: #52c41a;
+}
+
+.delete-btn {
+  background-color: #ff4d4f;
+  color: white;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  background-color: #ff7875;
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+}

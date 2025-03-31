@@ -1,0 +1,281 @@
+/* src/components/notifications/Notifications.css */
+.notification-center {
+  position: relative;
+}
+
+.notification-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.2s;
+}
+
+.notification-toggle:hover {
+  color: white;
+}
+
+.notification-toggle.has-alerts {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.notification-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ff4d4f;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  min-width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 320px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.notification-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.dismiss-all-btn {
+  background: none;
+  border: none;
+  color: #1890ff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.dismiss-all-btn:hover {
+  text-decoration: underline;
+}
+
+.notification-list {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.notification-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.notification-item.unread {
+  background-color: #e6f7ff;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-message {
+  margin: 0 0 4px 0;
+  color: #333;
+}
+
+.notification-date {
+  font-size: 12px;
+  color: #999;
+}
+
+.dismiss-btn {
+  background: none;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: #666;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.dismiss-btn:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.no-notifications {
+  padding: 20px;
+  text-align: center;
+  color: #999;
+}
+
+/* Budget Alerts */
+.budget-alert-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #fff3cd;
+  border-left: 4px solid #ff9800;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 16px;
+  width: 320px;
+  z-index: 1000;
+  animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.budget-alert-toast.dismissing {
+  animation: slideOut 0.3s forwards;
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.alert-toast-title {
+  margin: 0 0 8px 0;
+  color: #856404;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.alert-toast-title i {
+  margin-right: 8px;
+}
+
+.alert-toast-message {
+  margin: 0;
+  color: #856404;
+}
+
+.email-notification-message {
+  margin: 10px 0 0 0;
+  color: #856404;
+  font-size: 13px;
+  padding: 8px;
+  border-radius: 4px;
+  font-style: italic;
+  background-color: rgba(255, 248, 227, 0.6);
+}
+
+.email-notification-message.email-success {
+  background-color: rgba(240, 255, 240, 0.6);
+  color: #156f1e;
+  border-left: 2px solid #52c41a;
+}
+
+.email-notification-message.email-error {
+  background-color: rgba(255, 240, 240, 0.6);
+  color: #cf1322;
+  border-left: 2px solid #ff4d4f;
+}
+
+.alert-toast-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #856404;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.alert-toast-close:hover {
+  opacity: 1;
+}
+
+.alert-toast-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.alert-toast-btn {
+  background: none;
+  border: 1px solid #ffeeba;
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin-left: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.view-btn {
+  background-color: #856404;
+  color: white;
+}
+
+.view-btn:hover {
+  background-color: #775a04;
+}
+
+.dismiss-btn {
+  color: #856404;
+}
+
+.dismiss-btn:hover {
+  background-color: #ffeeba;
+}

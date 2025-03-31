@@ -1,0 +1,347 @@
+/* src/components/Dashboard.css */
+.dashboard {
+  padding: 20px;
+}
+
+.dashboard h1 {
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.timeframe-selector {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.timeframe-selector button {
+  background-color: #f0f0f0;
+  padding: 8px 16px;
+  margin-right: 8px;
+  border-radius: 20px;
+}
+
+.timeframe-selector button.active {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.chart-container {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: #555;
+}
+
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.recent-expenses {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recent-expenses h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: #555;
+}
+
+.expenses-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.expenses-table th, .expenses-table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.expenses-table th {
+  font-weight: 600;
+  color: #666;
+}
+
+.expenses-table .amount {
+  font-weight: 500;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .charts-row {
+    grid-template-columns: 1fr;
+  }
+}
+.summary-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.summary-box {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.summary-title {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.summary-value {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.summary-label {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.income-box .summary-value {
+  color: #52c41a;
+}
+
+.expense-box .summary-value {
+  color: #ff4d4f;
+}
+
+.balance-box.positive .summary-value,
+.balance-box.positive .summary-label {
+  color: #52c41a;
+}
+
+.balance-box.negative .summary-value,
+.balance-box.negative .summary-label {
+  color: #ff4d4f;
+}
+
+@media (max-width: 768px) {
+  .summary-boxes {
+    grid-template-columns: 1fr;
+  }
+}
+
+.action-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.action-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.expense-btn {
+  background-color: #ff4d4f;
+}
+
+.expense-btn:hover {
+  background-color: #ff7875;
+}
+
+.income-btn {
+  background-color: #52c41a;
+}
+
+.income-btn:hover {
+  background-color: #389e0d;
+}
+
+@media (max-width: 600px) {
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .action-btn {
+    width: 100%;
+  }
+}
+
+/* Chat Assistant Styles */
+.chat-assistant {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chat-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #4361EE;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.chat-toggle-btn:hover {
+  background-color: #3A56D4;
+  transform: translateY(-2px);
+}
+
+.chat-assistant.open .chat-toggle-btn {
+  display: none;
+}
+
+.chat-container {
+  width: 320px;
+  height: 450px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-header {
+  background-color: #4361EE;
+  color: white;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.chat-close-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-message {
+  padding: 10px 14px;
+  border-radius: 12px;
+  max-width: 80%;
+  word-break: break-word;
+}
+
+.chat-message.bot {
+  background-color: #f0f2f5;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.chat-message.user {
+  background-color: #4361EE;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-input-container {
+  padding: 12px;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chat-input {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 8px 14px;
+  outline: none;
+  font-size: 14px;
+}
+
+.chat-input:focus {
+  border-color: #4361EE;
+}
+
+.chat-send-btn {
+  background-color: #4361EE;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.chat-send-btn:hover {
+  background-color: #3A56D4;
+}
+
+/* Make sure the assistant is responsive */
+@media (max-width: 768px) {
+  .chat-container {
+    width: 280px;
+    height: 400px;
+  }
+  
+  .chat-assistant {
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+.scanner-btn {
+  background-color: #4361EE;
+}
+
+.scanner-btn:hover {
+  background-color: #3A56D4;
+}

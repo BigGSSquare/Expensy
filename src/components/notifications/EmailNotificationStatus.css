@@ -1,0 +1,92 @@
+/* src/components/notifications/EmailNotificationStatus.css */
+.email-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    min-width: 300px;
+    z-index: 1000;
+    animation: slideUp 0.3s forwards;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .email-notification.success {
+    background-color: #f6ffed;
+    border: 1px solid #b7eb8f;
+  }
+  
+  .email-notification.error {
+    background-color: #fff2f0;
+    border: 1px solid #ffccc7;
+  }
+  
+  .email-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 12px;
+    font-weight: bold;
+  }
+  
+  .email-notification.success .email-icon {
+    background-color: #52c41a;
+    color: white;
+  }
+  
+  .email-notification.error .email-icon {
+    background-color: #ff4d4f;
+    color: white;
+  }
+  
+  .email-message {
+    flex: 1;
+    font-size: 14px;
+  }
+  
+  .email-notification.success .email-message {
+    color: #389e0d;
+  }
+  
+  .email-notification.error .email-message {
+    color: #cf1322;
+  }
+  
+  .email-close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 8px;
+    opacity: 0.5;
+    padding: 0;
+  }
+  
+  .email-notification.success .email-close-btn {
+    color: #389e0d;
+  }
+  
+  .email-notification.error .email-close-btn {
+    color: #cf1322;
+  }
+  
+  .email-close-btn:hover {
+    opacity: 1;
+  }

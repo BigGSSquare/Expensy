@@ -1,0 +1,9 @@
+/* src/components/settings/Settings.css */
+.settings-container {
+    padding: 20px;
+  }
+  
+  .settings-container h1 {
+    margin-bottom: 24px;
+    color: #333;
+  }
