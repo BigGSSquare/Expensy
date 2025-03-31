@@ -1,7 +1,5 @@
 # Expensy
 
-![Expensy Logo](https://via.placeholder.com/150)
-
 Expensy is a modern finance tracker designed to help users manage their expenses effectively. It provides insightful analytics, secure data management, and a seamless user experience.
 
 ---
@@ -18,7 +16,7 @@ Expensy is a modern finance tracker designed to help users manage their expenses
 
 ---
 
-##What makes unique from others?
+## What makes unique from others?
 - 1.Scan Receipt 
 - 2.Email alerts
 - 3.Split feature
